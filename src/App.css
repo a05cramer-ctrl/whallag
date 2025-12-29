@@ -453,6 +453,28 @@ section {
   margin: 0;
   word-break: break-all;
   max-width: 100%;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  user-select: none;
+  position: relative;
+}
+
+.ca-value:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+  color: var(--gold-accent);
+  transform: scale(1.02);
+}
+
+.ca-value:active {
+  transform: scale(0.98);
+}
+
+.ca-value.copied {
+  color: var(--gold-accent);
+  background-color: rgba(212, 175, 55, 0.2);
+  font-weight: 600;
 }
 
 .social-icons {
