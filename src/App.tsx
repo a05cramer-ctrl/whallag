@@ -11,7 +11,7 @@ const subheadlines = [
 function App() {
   const [subheadline, setSubheadline] = useState(subheadlines[0])
   const [copied, setCopied] = useState(false)
-  const contractAddress = 'bQwB8QHsmWkUWg15ACQof4Eys7m9WHXwGGNPq1abonk'
+  const contractAddress = 'AwjXjpN8dm1mqrGY84rNzHpKbVoMxWrJX1okKDDFbonk'
 
   useEffect(() => {
     // Rotate subheadline randomly
