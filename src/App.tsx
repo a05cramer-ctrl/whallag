@@ -10,8 +10,6 @@ const subheadlines = [
 
 function App() {
   const [subheadline, setSubheadline] = useState(subheadlines[0])
-  const [copied, setCopied] = useState(false)
-  const contractAddress = 'Dk4hR9yJQKzGhPrzc3SmT9egXjjq9ym7or1ik5Phpump'
 
   useEffect(() => {
     // Rotate subheadline randomly
@@ -21,16 +19,6 @@ function App() {
     }, 5000)
     return () => clearInterval(interval)
   }, [])
-
-  const copyToClipboard = async () => {
-    try {
-      await navigator.clipboard.writeText(contractAddress)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch (err) {
-      console.error('Failed to copy:', err)
-    }
-  }
 
   return (
     <div className="App">
@@ -146,16 +134,6 @@ function App() {
       <footer className="footer">
         <div className="footer-watermark">🐋</div>
         <div className="footer-content">
-          <div className="contract-address">
-            <p className="ca-label">CA:</p>
-            <p 
-              className={`ca-value ${copied ? 'copied' : ''}`}
-              onClick={copyToClipboard}
-              title="Click to copy"
-            >
-              {copied ? 'Copied!' : contractAddress}
-            </p>
-          </div>
           <div className="social-icons">
             <a href="https://x.com/whalleah" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="X (Twitter)">𝕏</a>
           </div>
